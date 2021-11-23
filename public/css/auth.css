@@ -1,60 +1,7 @@
-    body {
-        margin: 0;
-        padding: 0;
-        font-family: sans-serif;
-        /*background: white;*/
-    }
-    
-    .box {
-        width: 20rem;
-        margin: auto;
-        display: block;
-        text-align: center;
-        /*transform: translate(-50%, -50%);*/
-    }
-    
-    .login-form {
-        width: 20rem;
-        max-width: 90%;
-        margin: auto;
-        display: block;
-        text-align: center;
-    }
-    
-    .form-control {
-        border-radius: 20px;
-        box-sizing: border-box;
-        border: 1px solid black;
-        background: white;
-        margin: 40px auto;
-        padding: 14px 10px;
-        text-align: left;
-        transition: 0.25s;
-        border-bottom: 5px solid black;
-    }
-    
-    .form-control input {
-        position: left;
-    }
-    
-    .form-control:hover {
-        color: white;
-        background: darkgrey;
-    }
-    
-    .btn1 {
-        border-radius: 30px;
-        margin: 20px auto;
-        padding: 10px;
-        cursor: pointer;
-        font-size: 18px;
-        color: black;
-        width: 35%;
-        background: white;
-        border: 3px solid black;
-    }
-    
-    .btn1:hover {
-        background: darkgray;
-        color: black;
-    }
+.login-form {
+    width: 20rem;
+    max-width: 90%;
+    margin: auto;
+    display: block;
+  }
+  

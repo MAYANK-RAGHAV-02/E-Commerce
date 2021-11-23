@@ -35,27 +35,27 @@ exports.getProduct = (req, res, next) => {
 };
 
 exports.getIndex = (req, res, next) => {
-  const page = +req.query.page || 1;
-  let totalItems;
+  // const page = +req.query.page || 1;
+  // let totalItems;
   Product.find()
-    .countDocuments()
-    .then(numProducts => {
-      totalItems = numProducts;
-      return Product.find()
-        .skip((page - 1) * PAGE_PER_ITEM)
-        .limit(PAGE_PER_ITEM)
-    })
+    // .countDocuments()
+    // .then(numProducts => {
+    //   // totalItems = numProducts;
+    //   return Product.find()
+    //     // .skip((page - 1) * PAGE_PER_ITEM)
+    //     // .limit(PAGE_PER_ITEM)
+    // })
     .then(products => {
       res.render('shop/index', {
         prods: products,
         pageTitle: 'Shop',
         path: '/',
-        currentPage: page,
-        hasNextPage: PAGE_PER_ITEM * page < totalItems,
-        hasPreviousPage: page > 1,
-        nextPage: page + 1,
-        previousPage: page - 1,
-        lastPage: Math.ceil(totalItems / PAGE_PER_ITEM),
+        // currentPage: page,
+        // hasNextPage: PAGE_PER_ITEM * page < totalItems,
+        // hasPreviousPage: page > 1,
+        // nextPage: page + 1,
+        // previousPage: page - 1,
+        // lastPage: Math.ceil(totalItems / PAGE_PER_ITEM),
         
       });
     })
@@ -65,17 +65,25 @@ exports.getIndex = (req, res, next) => {
 };
 
 exports.getCart = (req, res, next) => {
+  let product;
+  let total = 0
   req.user
     .populate('cart.items.productId')
     // .execPopulate()
-    .then(user => {
-      // console.log(user.cart.items);
+    .then(user => {product = user.cart.items;
+      total= 0;
+     product.forEach(element => {
+       total += element.quantity * element.productId.price;
+     });
+
+      
       const products = user.cart.items;
       // console.log(products)
       res.render('shop/cart', {
         path: '/cart',
         pageTitle: 'Your Cart',
         products: products,
+        total: total
       });
     })
     .catch(err => console.log(err));

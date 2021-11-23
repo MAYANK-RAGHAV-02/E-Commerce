@@ -103,14 +103,22 @@ form {
 }
 
 .main-header__items a:hover,
-.main-header__items a:active {
-    color: #430c68;
-    background: #ccc;
+.main-header__items a:active ,
+.main-header__items a.active {
+    color: white;
+    background: #430c68;
+    border-radius: 8px;
 }
 
-.main-header__items-list a:hover {
-    color: black;
+.main-header__item a:hover,
+.main-header__item a:active ,
+.main-header__item a.active {
+    color: white;
+    background:#430c68;
+    /* border-radius: 8px; */
 }
+
+
 
 .mobile-nav {
     width: 30rem;

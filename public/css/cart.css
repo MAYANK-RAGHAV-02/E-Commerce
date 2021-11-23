@@ -15,6 +15,10 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
   margin-bottom: 1rem;
 }
+.cart__item img {
+  width: 80px;
+  height: 60px;
+}
 
 .cart__item h1,
 .cart__item h2 {
@@ -22,4 +26,12 @@
   font-size: 1.2rem;
   margin: 0;
 }
+
+.total {
+  text-align: center;
+  font-size: 1.2rem;
+
+}
+
+
 
