@@ -2,28 +2,48 @@
     <link rel="stylesheet" href="/css/forms.css">
     <link rel="stylesheet" href="/css/auth.css">
     <link rel="stylesheet" href="/css/main.css">
-</head>
+    </head>
 
-<body>
-   <%- include('../includes/navigation.ejs') %>
+    <body>
+        <%- include('../includes/navigation.ejs') %>
 
-    <main>
-        <% if(errorMessage){ %> 
-            <div class="user-message user-message--error"><%= errorMessage %> </div>
-        <% } %> 
-        <form class="login-form" action="/login" method="POST">
-            <div class="form-control">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" >
-            </div>
-           
-            <div class="form-control">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" step="0.01" >
-            </div>
-            
-
-            <button class="btn" type="submit">Login</button>
-        </form>
-    </main>
-<%- include('../includes/end.ejs') %>
+            <main>
+                <% if(errorMessage){ %>
+                    <div class="container right-panel-active">
+                        <!-- sign up-->
+                        <div class="container__form container--signup">
+                            <form action="#" class="form" id="form1">
+                                <h2 class="form__title">sign Up</h2>
+                                <input type="text" placeholder="User" class="input" />
+                                <input type="email" placeholder="Email" class="input" />
+                                <input type="password" placeholder="Password" class="input" />
+                                <button class="btn">Sign Up</button>
+                            </form>
+                        </div>
+                        <!-- sign up-->
+                        <%= errorMessage %>
+                            <div class="container__form container--signin">
+                                <form action="#" class="form" id="form2">
+                                    <h2 class="form__title">Sign In</h2>
+                                    <input type="email" placeholder="Email" class="input" />
+                                    <input type="password" placeholder="Password" class="input" />
+                                    <a href="#" class="link" Forgot your password?</a>
+                                        <button class="btn">Sign In</button>
+                                </form>
+                            </div>
+                            <!-- overlay-->
+                            <div class="container__overlay">
+                                <div class="overlay">
+                                    <div class=" overlay__panel overlay--left">
+                                        <button class="btn" id="signIn">Sign In</button>
+                                    </div>
+                                    <div class="overlay__panel overlay--right">
+                                        <button class="btn" id="signUp">Sign Up</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <% } %>
+            </main>
+            <%- include('../includes/end.ejs') %>
+    </body>
