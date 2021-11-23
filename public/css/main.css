@@ -64,6 +64,12 @@ form {
     text-decoration: none;
     color: white;
 }
+.main-header__item button {
+    background-color:#47126b ;
+    color: white;
+    border: none;
+    font-size: 1rem;
+}
 
 .header {
     position: fixed;
