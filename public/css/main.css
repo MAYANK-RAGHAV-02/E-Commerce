@@ -38,6 +38,7 @@ form {
     display: flex;
     flex-direction: column;
     align-items: center;
+    /*position: relative;*/
 }
 
 .main-header__nav {
@@ -64,8 +65,9 @@ form {
     text-decoration: none;
     color: white;
 }
+
 .main-header__item button {
-    background-color:#47126b ;
+    background-color: #47126b;
     color: white;
     border: none;
     font-size: 1rem;
@@ -111,7 +113,7 @@ form {
 }
 
 .main-header__items a:hover,
-.main-header__items a:active ,
+.main-header__items a:active,
 .main-header__items a.active {
     color: white;
     background: #430c68;
@@ -119,14 +121,12 @@ form {
 }
 
 .main-header__item a:hover,
-.main-header__item a:active ,
+.main-header__item a:active,
 .main-header__item a.active {
     color: white;
-    background:#430c68;
+    background: #430c68;
     /* border-radius: 8px; */
 }
-
-
 
 .mobile-nav {
     width: 30rem;
