@@ -1,7 +1,7 @@
 <%- include('../includes/head.ejs') %>
-    <link rel="stylesheet" href="/css/forms.css">
+    <!-- <link rel="stylesheet" href="/css/forms.css"> -->
     <link rel="stylesheet" href="/css/auth.css">
-    <link rel="stylesheet" href="/css/main.css">
+    <!-- <link rel="stylesheet" href="/css/main.css"> -->
 </head>
 
 <body>
@@ -11,19 +11,64 @@
         <% if(errorMessage){ %> 
             <div class="user-message user-message--error"><%= errorMessage %> </div>
         <% } %> 
-        <form class="login-form" action="/login" method="POST">
-            <div class="form-control">
-                <label for="email">Email</label>
-                <input type="email" name="email" id="email" >
-            </div>
-           
-            <div class="form-control">
-                <label for="password">Password</label>
-                <input type="password" name="password" id="password" step="0.01" >
-            </div>
-            
+        
+        <!-- <form  action="/login" method="POST">
+             <img  
+            src="https://smallbizboom.net/wp-content/uploads/2018/06/20180607033046-79.jpg" alt=""> -->
+            <!-- <section>
+            <div class="mb-4">
+                <label for="email" class="form-label">Email address</label>
+                <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
+              </div>
+              <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" name="password" class="form-control" id="password" step="0.01">
+              </div> -->
 
-            <button class="btn" type="submit">Login</button>
-        </form>
+            <!-- <button class="btn" type="submit">Login</button> -->
+        <!-- </section> -->
+
+        <!-- </form> --> 
+        <section>
+            <div class="imgBx"> 
+                <div class="backdro"></div> 
+                <img  
+            src="https://smallbizboom.net/wp-content/uploads/2018/06/20180607033046-79.jpg" alt="">              
+            </div>
+            <div class="contentBx">
+                <div class="formBx">
+                    <h2>Login</h2>
+                <form action="/login" method="POST">
+                    <div class="inputBx">
+                        <label for="email">Email</label>
+                        <input type="text" name="email" id="email">
+                    </div>
+                    <div class="inputBx">
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password" step="0.01">
+                    </div>
+                    <button class="btn" type="submit">Login</button>
+                </form>
+                <div class="extra-Link">
+                    Don't have account ? <a href="/signUp">SignUp</a>
+                </div>
+                </div>
+               
+
+            </div>
+
+        </section>
+
+        
     </main>
 <%- include('../includes/end.ejs') %>
+
+<!-- <div class="form-control">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" >
+            </div> -->
+           
+            <!-- <div class="form-control">
+                <label for="password">Password</label>
+                <input type="password" name="password" id="password" step="0.01" >
+            </div> -->

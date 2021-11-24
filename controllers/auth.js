@@ -81,6 +81,7 @@ exports.postSignup = (req, res, next) => {
   const password = req.body.password;
   const confirmPassword = req.body.confirm - password;
   const errors = validationResult(req);
+  // console.log("errors.array()[0].msg",errors.array());
   if (!errors.isEmpty()) {
     // console.log(errors.array()[0].msg);
     return res.status(422).render('auth/signup', {
@@ -97,10 +98,13 @@ exports.postSignup = (req, res, next) => {
      
     });
   }
+
   User.findOne({ email: email })
     .then(userDoc => {
       if (userDoc) {
-        return res.redirect('/signUp')
+        req.flash('error', 'Email already registered')
+       res.redirect('/signUp')
+       return;
       }
       return bcrypt.hash(password, 12)
         .then(hashPassword => {
