@@ -71,6 +71,7 @@ form {
     color: white;
     border: none;
     font-size: 1rem;
+    cursor: pointer;
 }
 
 .header {
@@ -83,7 +84,7 @@ form {
     width: 18%;
     background-color: white;
     box-shadow: 0 2px 8px;
-    /*position: fixed;*/
+    padding-top: 1.5rem;
 }
 
 .main-header__items-list {
