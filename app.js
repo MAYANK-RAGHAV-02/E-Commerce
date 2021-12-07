@@ -63,14 +63,7 @@ app.use((req, res, next) => {
     })
 })
 
-// app.use((req, res, next) => {
-//   User.findById('614f5534e4db1fa95d996e74')
-//     .then(user => {
-//       req.user = user;
-//       next();
-//     })
-//     .catch(err => console.log(err));
-// });
+
 app.use((req,res,next)=>{
   res.locals.isAuthenticated= req.session.isLoggedIn;
   next()
@@ -87,7 +80,7 @@ mongoose
   )
   .then(result => {
     app.listen(3000, () => {
-      console.log("connected");
+      console.log("connected 3000");
     })
   })
   .catch(err => {

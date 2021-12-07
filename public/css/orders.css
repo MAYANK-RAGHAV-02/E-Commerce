@@ -1,3 +1,12 @@
+main {
+  border: 3px solid #47126b;
+  width: 60%;
+  margin-left: 32%;
+  margin-top: 110px;
+  box-shadow: 0 2px 8px;
+  margin-bottom: 3%;
+  border-radius: 12px;
+}
 .orders {
   list-style: none;
   padding: 0;

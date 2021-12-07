@@ -15,7 +15,7 @@ main {
     border: 3px solid #47126b;
     width: 60%;
     margin-left: 32%;
-    margin-top: 3.5%;
+    margin-top: 110px;
     box-shadow: 0 2px 8px;
     margin-bottom: 3%;
     border-radius: 12px;
@@ -25,6 +25,7 @@ main {
     width: 20rem;
     max-width: 95%;
     margin: 1rem;
+    border-radius: 10px;
 }
 
 .product__title {
@@ -38,6 +39,11 @@ main {
     margin-bottom: 0.5rem;
 }
 
+.card__image {
+    width: 20rem;
+    /* height: 14rem; */
+
+}
 .product__description {
     text-align: center;
 }

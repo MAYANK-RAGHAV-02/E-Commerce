@@ -73,7 +73,7 @@ exports.getCart = (req, res, next) => {
     .then(user => {product = user.cart.items;
       total= 0;
      product.forEach(element => {
-       total += element.quantity * element.productId.price;
+       total += element.quantity * element?.productId?.price;
      });
 
       
@@ -103,6 +103,7 @@ exports.postCart = (req, res, next) => {
 
 exports.postCartDeleteProduct = (req, res, next) => {
   const prodId = req.body.productId;
+
   req.user
     .removeItemCart(prodId)
     .then(result => {
@@ -117,16 +118,18 @@ exports.postOrder = (req, res, next) => {
     .populate('cart.items.productId')
     // .execPopulate()
     .then(user => {
-      // console.log(user.cart.items);
+      // console.log("Quan", user.cart.items[0].quantity);
       const products = user.cart.items.map(i => {
         return { quantity: i.quantity, product: { ...i.productId._doc } }
       })
+      // console.log(products)
       const orders = new order({
         user: {
           email: req.user.email,
           userId: req.user
         },
         products: products
+        
       })
       return orders.save()
     })

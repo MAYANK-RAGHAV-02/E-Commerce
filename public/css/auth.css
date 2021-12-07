@@ -1,21 +1,3 @@
-/* .login-form {
-  border: 2px solid black;
-    max-width: 90%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 100px;
-  }
-  .login-form img {
-    width: 450px;
-    height: 400px;
-  }
-  .login-form section {
-    margin-left: 5rem;
-    width: 450px;
-    height: 400px;
-  } */
-
 * {
   margin: 0;
   padding: 0;
@@ -35,16 +17,15 @@ section {
   border-radius: 10px;
   margin-top: 5%;
   margin-left: 14%;
-  box-shadow:  0 2px 8px rgba(0, 0, 0, 0.26);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 section .imgBx {
   margin: 0;
   position: relative;
   width: 50%;
   height: 100%;
-  
 }
-section .imgBx img {
+section .imgBx .img {
   position: absolute;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -60,8 +41,16 @@ section .imgBx img {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(71, 18, 107, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   z-index: 10;
+}
+.logo {
+  position: absolute;
+ margin-top: 27%;
+ margin-left: 30%;
+  z-index: 20;
+  width: 200px;
+  height: 200px;
 }
 section .contentBx {
   display: flex;
@@ -72,7 +61,6 @@ section .contentBx {
 }
 section .contentBx .formBx {
   width: 50%;
-  
 }
 
 section .contentBx .formBx h2 {
@@ -133,4 +121,21 @@ section .contentBx .formBx .inputBx {
   text-decoration: none;
   font-size: 1.2rem;
   font-weight: 400;
+}
+
+.tags {
+  font-style: oblique;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  font-size: 1.1rem;
+  color: grey;
+}
+.tags span {
+  font-style: italic;
+  color: #47126b;
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
 }
