@@ -1,0 +1,54 @@
+<%- include('../includes/head.ejs') %>
+    <link rel="stylesheet" href="/css/forms.css">
+    <link rel="stylesheet" href="/css/product.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+   <style>
+       main{
+        border: 3px solid #47126b;
+    width: 60%;
+    margin-left: 32%;
+    margin-top: 110px;
+    box-shadow: 0 2px 8px;
+    margin-bottom: 3%;
+    border-radius: 12px;
+       }
+
+   </style>
+
+    <main>
+        <% if(errorMessage){ %> 
+            <div class="user-message user-message--error"><%= errorMessage %> </div>
+        <% } %>   
+        <form class="product-form" action="/admin/<% if (editing || hasError) { %>edit-product<% } else { %>add-product<% } %>" method="POST" enctype="multipart/form-data">
+            <div class="form-control">
+                <label class="form-label" for="title">Title</label>
+                <input class="form-input" type="text" name="title" id="title" value="<% if (editing || hasError) { %><%= product.title %><% } %>">
+            </div>
+            <!-- <div class="form-control">
+                <label for="imageUrl">Image URL</label>
+                <input type="text" name="imageUrl" id="imageUrl" value="<% if (editing || hasError) { %><%= product.imageUrl %> <% } %>">
+            </div> -->
+            <div class="form-control">
+                <label class="form-label" for="image">Image</label>
+                <input class="form-input"type="file" name="image" id="image" value="<% if (editing || hasError) { %> <%= product.imageUrl %> <% } %>">
+            </div>
+            <div class="form-control">
+                <label class="form-label" for="price">Price</label>
+                <input class="form-input" type="number" name="price" id="price" step="0.01" value="<% if (editing || hasError) { %><%= product.price %><% } %>">
+            </div>
+            <div class="form-control">
+                <label class="form-label" for="description">Description</label>
+                <textarea  class="form-input-textarea" name="description" id="description" rows="5"><% if (editing || hasError) { %><%= product.description %><% } %></textarea>
+            </div>
+            <% if (editing) { %>
+                <input type="hidden" value="<%= product._id %>" name="productId">
+            <% } %>
+
+            <button class="btn1" type="submit"><% if (editing || hasError) { %>Update Product<% } else { %>Add Product<% } %></button>
+        </form>
+    </main>
+<%- include('../includes/end.ejs') %>

@@ -1,0 +1,28 @@
+.centered {
+    display: flex;
+    flex-direction: row;
+}
+
+.image {
+    margin: 1rem;
+  height: 25rem;
+}
+
+.image img {
+  height: 100%;
+}
+
+.content {
+    margin: 1rem;
+    margin-left: 5rem;
+    text-align: center;
+}
+.content h1 {
+    color: #47126b;
+}
+
+.content p {
+    max-width: 35rem;
+    font-weight: bold;
+    color: #680fa6;
+}

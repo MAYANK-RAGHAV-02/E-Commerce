@@ -2,81 +2,83 @@
     <!-- <link rel="stylesheet" href="/css/forms.css"> -->
     <link rel="stylesheet" href="/css/auth.css">
     <!-- <link rel="stylesheet" href="/css/main.css"> -->
-</head>
+    </head>
 
-<body>
-   <%- include('../includes/navigation.ejs') %>
-   <style>
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+            <style>
+                .user-message {
+                    position: fixed;
+                    top: 10%;
+                    left: 15%;
+                    margin: auto;
+                    width: 68%;
+                    border: 1px solid #4771fa;
+                    padding: 0.5rem;
+                    border-radius: 3px;
+                    background: #b9c9ff;
+                    text-align: center;
+                    z-index: 50;
 
-       .user-message {
-           position: fixed;
-           top: 10%;
-           left: 15%;
-  margin: auto;
-  width: 68%;
-  border: 1px solid #4771fa;
-  padding: 0.5rem;
-  border-radius: 3px;
-  background: #b9c9ff;
-  text-align: center;
-  z-index: 50;
-  
-}
+                }
 
-.user-message--error {
-  border-color: red;
-  background: rgb(255, 176, 176);
-  color: red;
-}
-   </style>
+                .user-message--error {
+                    border-color: red;
+                    background: rgb(255, 176, 176);
+                    color: red;
+                }
+            </style>
 
-    <main>
-        <% if(errorMessage){ %> 
-            <div class="user-message user-message--error"><%= errorMessage %> </div>
-        <% } %> 
-        
-        <section>
-            <div class="imgBx"> 
-                
-                <div class="backdro"></div> 
-                <img  class="img"
-            src="https://smallbizboom.net/wp-content/uploads/2018/06/20180607033046-79.jpg" alt="">   
-            <img class="logo" src="../../images/logo.png" alt="">           
-            </div>
-            <div class="contentBx">
-                <div class="formBx">
-                    <h2>Login</h2>
-                <form action="/login" method="POST">
-                    <div class="inputBx">
-                        <label for="email">Email</label>
-                        <input type="text" name="email" id="email">
+            <main>
+                <% if(errorMessage){ %>
+                    <div class="user-message user-message--error">
+                        <%= errorMessage %>
                     </div>
-                    <div class="inputBx">
-                        <label for="password">Password</label>
-                        <input type="password" name="password" id="password" step="0.01">
-                    </div>
-                    <button class="btn" type="submit">Login</button>
-                </form>
-                <div class="extra-Link">
-                    Don't have account ? <a href="/signUp">SignUp</a>
-                </div>
-                </div>
-               
+                    <% } %>
 
-            </div>
+                        <section>
+                            <div class="imgBx">
 
-        </section>
-        <p class="tags">powered by <span>Best 4 U</span></p>
-        
-    </main>
-<%- include('../includes/end.ejs') %>
+                                <div class="backdro"></div>
+                                <img class="img"
+                                    src="https://media.istockphoto.com/photos/mountain-landscape-picture-id517188688?k=20&m=517188688&s=612x612&w=0&h=i38qBm2P-6V4vZVEaMy_TaTEaoCMkYhvLCysE7yJQ5Q="
+                                    alt="">
+                                <img class="logo" src="../../images/logo.png" alt="">
+                            </div>
+                            <div class="contentBx">
+                                <div class="formBx">
+                                    <h2>Login</h2>
+                                    <form action="/login" method="POST">
+                                        <div class="inputBx">
+                                            <label for="email">Email</label>
+                                            <input type="text" name="email" id="email">
+                                        </div>
+                                        <div class="inputBx">
+                                            <label for="password">Password</label>
+                                            <input type="password" name="password" id="password" step="0.01">
+                                        </div>
+                                        <button class="btn" type="submit">Login</button>
+                                    </form>
+                                    <div class="extra-Link">
+                                        Don't have account ? <a href="/signUp">SignUp</a>
+                                    </div>
+                                </div>
 
-<!-- <div class="form-control">
+
+                            </div>
+
+                        </section>
+                        <p class="tags">powered by <span>Best 4 U</span></p>
+
+            </main>
+            <%- include('../includes/end.ejs') %>
+
+                <!-- <div class="form-control">
                 <label for="email">Email</label>
                 <input type="email" name="email" id="email" >
             </div> -->
-           
-            <!-- <div class="form-control">
+
+                <!-- <div class="form-control">
                 <label for="password">Password</label>
                 <input type="password" name="password" id="password" step="0.01" >
             </div> -->

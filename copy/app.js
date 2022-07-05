@@ -80,7 +80,7 @@ mongoose
   )
   .then(result => {
     app.listen(3001, () => {
-      console.log(`connected ${3001}`);
+      console.log("connected 3000");
     })
   })
   .catch(err => {
